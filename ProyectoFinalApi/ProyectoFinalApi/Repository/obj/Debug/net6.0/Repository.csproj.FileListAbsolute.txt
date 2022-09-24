@@ -1,0 +1,34 @@
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\bin\Debug\net6.0\Repository.deps.json
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\bin\Debug\net6.0\Repository.runtimeconfig.json
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\bin\Debug\net6.0\Repository.dll
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\bin\Debug\net6.0\Repository.pdb
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\bin\Debug\net6.0\Models.dll
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\bin\Debug\net6.0\Models.pdb
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.csproj.CopyComplete
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.dll
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\obj\Debug\net6.0\refint\Repository.dll
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.pdb
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.genruntimeconfig.cache
+D:\Jetrxz\Jetrxz Conti\Proyectos Visual Studio\ProyectoFinalApi\Repository\obj\Debug\net6.0\ref\Repository.dll
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\bin\Debug\net6.0\Repository.deps.json
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\bin\Debug\net6.0\Repository.runtimeconfig.json
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\bin\Debug\net6.0\Repository.dll
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\bin\Debug\net6.0\ref\Repository.dll
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\bin\Debug\net6.0\Repository.pdb
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\bin\Debug\net6.0\Models.dll
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\bin\Debug\net6.0\Models.pdb
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.csproj.CopyComplete
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.dll
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\obj\Debug\net6.0\ref\Repository.dll
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.pdb
+D:\instituto continental\6to ciclo\D'licia\ProyectoFinalApi\ProyectoFinalApi\Repository\obj\Debug\net6.0\Repository.genruntimeconfig.cache
