@@ -1,0 +1,473 @@
+
+CREATE TABLE _Cargo
+(
+	CargoId               CHAR(18)  NOT NULL ,
+	Tipo_Cargo            CHAR(18)  NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPK_Cargo ON _Cargo
+(CargoId  ASC);
+
+
+
+ALTER TABLE _Cargo
+	ADD CONSTRAINT  XPK_Cargo PRIMARY KEY (CargoId);
+
+
+
+CREATE TABLE _Empleado
+(
+	Nombre                CHAR(18)  NULL ,
+	Apellido              CHAR(18)  NULL ,
+	Direccion             CHAR(18)  NULL ,
+	Celular               CHAR(18)  NULL ,
+	EmpleadoId            CHAR(18)  NOT NULL ,
+	CargoId               CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKEmpleado ON _Empleado
+(EmpleadoId  ASC);
+
+
+
+ALTER TABLE _Empleado
+	ADD CONSTRAINT  XPKEmpleado PRIMARY KEY (EmpleadoId);
+
+
+
+CREATE TABLE _Insumos
+(
+	InsumoId              CHAR(18)  NOT NULL ,
+	Nombre                CHAR(18)  NULL ,
+	Descipci              CHAR(18)  NULL ,
+	UnidadId              CHAR(18)  NOT NULL ,
+	Categoria             CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPK_Insumos ON _Insumos
+(InsumoId  ASC,Categoria  ASC);
+
+
+
+ALTER TABLE _Insumos
+	ADD CONSTRAINT  XPK_Insumos PRIMARY KEY (InsumoId,Categoria);
+
+
+
+CREATE TABLE _Preparacion_Insumo
+(
+	Cantidad              CHAR(18)  NULL ,
+	InsumoId              CHAR(18)  NOT NULL ,
+	PreparacionId         CHAR(18)  NOT NULL ,
+	Categoria             CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPK_Preparacion_Insumo ON _Preparacion_Insumo
+(InsumoId  ASC,PreparacionId  ASC,Categoria  ASC);
+
+
+
+ALTER TABLE _Preparacion_Insumo
+	ADD CONSTRAINT  XPK_Preparacion_Insumo PRIMARY KEY (InsumoId,PreparacionId,Categoria);
+
+
+
+CREATE TABLE Adquisiciones
+(
+	Cantidad              CHAR(18)  NULL ,
+	FechaAdquisicion      CHAR(18)  NULL ,
+	FechaCaducidad        CHAR(18)  NULL 
+);
+
+
+
+CREATE TABLE Boleta
+(
+	BoletaId              CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKBoleta ON Boleta
+(BoletaId  ASC);
+
+
+
+ALTER TABLE Boleta
+	ADD CONSTRAINT  XPKBoleta PRIMARY KEY (BoletaId);
+
+
+
+CREATE TABLE Categoria
+(
+	CategoriaId           CHAR(18)  NOT NULL ,
+	Descripcion           CHAR(18)  NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKCategoria ON Categoria
+(CategoriaId  ASC);
+
+
+
+ALTER TABLE Categoria
+	ADD CONSTRAINT  XPKCategoria PRIMARY KEY (CategoriaId);
+
+
+
+CREATE TABLE Cliente
+(
+	ClienteId             CHAR(18)  NOT NULL ,
+	_Nombre               CHAR(18)  NULL ,
+	Apellido              CHAR(18)  NULL ,
+	Direccion             CHAR(18)  NULL ,
+	Celular               CHAR(18)  NULL ,
+	_Usuario              CHAR(18)  NULL ,
+	Contraseña            CHAR(18)  NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKCliente ON Cliente
+(ClienteId  ASC);
+
+
+
+ALTER TABLE Cliente
+	ADD CONSTRAINT  XPKCliente PRIMARY KEY (ClienteId);
+
+
+
+CREATE TABLE Comprobante
+(
+	ComprobanteId         CHAR(18)  NOT NULL ,
+	Descripcion           CHAR(18)  NULL ,
+	Codigo                CHAR(18)  NULL ,
+	PedidoId              CHAR(18)  NOT NULL ,
+	EstadoId              CHAR(18)  NOT NULL ,
+	EmpleadoId            CHAR(18)  NOT NULL ,
+	ProductoId            CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKComprobante ON Comprobante
+(ComprobanteId  ASC,PedidoId  ASC,EstadoId  ASC,EmpleadoId  ASC,ProductoId  ASC);
+
+
+
+ALTER TABLE Comprobante
+	ADD CONSTRAINT  XPKComprobante PRIMARY KEY (ComprobanteId,PedidoId,EstadoId,EmpleadoId,ProductoId);
+
+
+
+CREATE TABLE Estado
+(
+	EstadoId              CHAR(18)  NOT NULL ,
+	Cancelado             CHAR(18)  NULL ,
+	Entregado             CHAR(18)  NULL ,
+	Preparacion           CHAR(18)  NULL ,
+	PedidoEntrago         CHAR(18)  NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKEstado ON Estado
+(EstadoId  ASC);
+
+
+
+ALTER TABLE Estado
+	ADD CONSTRAINT  XPKEstado PRIMARY KEY (EstadoId);
+
+
+
+CREATE TABLE Factura
+(
+	FacturaId             CHAR(18)  NOT NULL ,
+	Ruc                   CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKFactura ON Factura
+(FacturaId  ASC,Ruc  ASC);
+
+
+
+ALTER TABLE Factura
+	ADD CONSTRAINT  XPKFactura PRIMARY KEY (FacturaId,Ruc);
+
+
+
+CREATE TABLE Ingredientes
+(
+	Cantidad              CHAR(18)  NOT NULL ,
+	ProductoId            CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKIngredientes ON Ingredientes
+(Cantidad  ASC);
+
+
+
+ALTER TABLE Ingredientes
+	ADD CONSTRAINT  XPKIngredientes PRIMARY KEY (Cantidad);
+
+
+
+CREATE TABLE Login
+(
+	Usuario               CHAR(18)  NULL ,
+	Clave                 CHAR(18)  NULL ,
+	EmpleadoId            CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE TABLE Pedido_Producto
+(
+	Pedido_ProductoId     CHAR(18)  NOT NULL ,
+	Cantidad              CHAR(18)  NULL ,
+	PedidoId              CHAR(18)  NOT NULL ,
+	EstadoId              CHAR(18)  NOT NULL ,
+	EmpleadoId            CHAR(18)  NOT NULL ,
+	ProductoId            CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKPedido_Producto ON Pedido_Producto
+(Pedido_ProductoId  ASC,PedidoId  ASC,EstadoId  ASC,EmpleadoId  ASC,ProductoId  ASC);
+
+
+
+ALTER TABLE Pedido_Producto
+	ADD CONSTRAINT  XPKPedido_Producto PRIMARY KEY (Pedido_ProductoId,PedidoId,EstadoId,EmpleadoId,ProductoId);
+
+
+
+CREATE TABLE Pedidos
+(
+	PedidoId              CHAR(18)  NOT NULL ,
+	FechaPedido           CHAR(18)  NULL ,
+	FechaEntrega          CHAR(18)  NULL ,
+	Total                 CHAR(18)  NULL ,
+	EstadoId              CHAR(18)  NOT NULL ,
+	EmpleadoId            CHAR(18)  NOT NULL ,
+	ProductoId            CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKPedidos ON Pedidos
+(PedidoId  ASC,EstadoId  ASC,EmpleadoId  ASC,ProductoId  ASC);
+
+
+
+ALTER TABLE Pedidos
+	ADD CONSTRAINT  XPKPedidos PRIMARY KEY (PedidoId,EstadoId,EmpleadoId,ProductoId);
+
+
+
+CREATE TABLE Preparacion
+(
+	PreparacionId         CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKPreparacion ON Preparacion
+(PreparacionId  ASC);
+
+
+
+ALTER TABLE Preparacion
+	ADD CONSTRAINT  XPKPreparacion PRIMARY KEY (PreparacionId);
+
+
+
+CREATE TABLE Productos
+(
+	Nombre                CHAR(18)  NULL ,
+	Descripcion           CHAR(18)  NULL ,
+	ProductoId            CHAR(18)  NOT NULL ,
+	Precio                CHAR(18)  NULL ,
+	PreparacionId         CHAR(18)  NOT NULL ,
+	CategoriaId           CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKProductos ON Productos
+(ProductoId  ASC);
+
+
+
+ALTER TABLE Productos
+	ADD CONSTRAINT  XPKProductos PRIMARY KEY (ProductoId);
+
+
+
+CREATE TABLE Tipo_Comprobante
+(
+	BoletaId              CHAR(18)  NOT NULL ,
+	FacturaId             CHAR(18)  NOT NULL ,
+	Ruc                   CHAR(18)  NOT NULL ,
+	ProductoId            CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKTipo_Comprobante ON Tipo_Comprobante
+(ProductoId  ASC);
+
+
+
+ALTER TABLE Tipo_Comprobante
+	ADD CONSTRAINT  XPKTipo_Comprobante PRIMARY KEY (ProductoId);
+
+
+
+CREATE TABLE TipoUnidad
+(
+	UnidadId              CHAR(18)  NOT NULL ,
+	Categoria             CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKTipoUnidad ON TipoUnidad
+(UnidadId  ASC,Categoria  ASC);
+
+
+
+ALTER TABLE TipoUnidad
+	ADD CONSTRAINT  XPKTipoUnidad PRIMARY KEY (UnidadId,Categoria);
+
+
+
+CREATE TABLE Ubicacion_Pedido
+(
+	DireccionId           CHAR(18)  NOT NULL ,
+	Direccion             CHAR(18)  NULL ,
+	CodigoPostal          CHAR(18)  NULL ,
+	Latitud               CHAR(18)  NULL ,
+	Longitud              CHAR(18)  NULL ,
+	Referencia            CHAR(18)  NULL ,
+	ClienteId             CHAR(18)  NOT NULL ,
+	ProductoId            CHAR(18)  NOT NULL 
+);
+
+
+
+CREATE UNIQUE INDEX XPKUbicacion_Pedido ON Ubicacion_Pedido
+(DireccionId  ASC,ClienteId  ASC,ProductoId  ASC);
+
+
+
+ALTER TABLE Ubicacion_Pedido
+	ADD CONSTRAINT  XPKUbicacion_Pedido PRIMARY KEY (DireccionId,ClienteId,ProductoId);
+
+
+
+ALTER TABLE _Empleado
+	ADD (CONSTRAINT  R_16 FOREIGN KEY (CargoId) REFERENCES _Cargo(CargoId));
+
+
+
+ALTER TABLE _Insumos
+	ADD (CONSTRAINT  R_21 FOREIGN KEY (UnidadId,Categoria) REFERENCES TipoUnidad(UnidadId,Categoria));
+
+
+
+ALTER TABLE _Preparacion_Insumo
+	ADD (CONSTRAINT  R_8 FOREIGN KEY (InsumoId,Categoria) REFERENCES _Insumos(InsumoId,Categoria));
+
+
+
+ALTER TABLE _Preparacion_Insumo
+	ADD (CONSTRAINT  R_9 FOREIGN KEY (PreparacionId) REFERENCES Preparacion(PreparacionId));
+
+
+
+ALTER TABLE Comprobante
+	ADD (CONSTRAINT  R_11 FOREIGN KEY (PedidoId,EstadoId,EmpleadoId,ProductoId) REFERENCES Pedidos(PedidoId,EstadoId,EmpleadoId,ProductoId));
+
+
+
+ALTER TABLE Ingredientes
+	ADD (CONSTRAINT  R_6 FOREIGN KEY (ProductoId) REFERENCES Productos(ProductoId));
+
+
+
+ALTER TABLE Login
+	ADD (CONSTRAINT  R_17 FOREIGN KEY (EmpleadoId) REFERENCES _Empleado(EmpleadoId));
+
+
+
+ALTER TABLE Pedido_Producto
+	ADD (CONSTRAINT  R_14 FOREIGN KEY (PedidoId,EstadoId,EmpleadoId,ProductoId) REFERENCES Pedidos(PedidoId,EstadoId,EmpleadoId,ProductoId));
+
+
+
+ALTER TABLE Pedidos
+	ADD (CONSTRAINT  R_20 FOREIGN KEY (EstadoId) REFERENCES Estado(EstadoId));
+
+
+
+ALTER TABLE Pedidos
+	ADD (CONSTRAINT  R_23 FOREIGN KEY (EmpleadoId) REFERENCES _Empleado(EmpleadoId));
+
+
+
+ALTER TABLE Pedidos
+	ADD (CONSTRAINT  R_12 FOREIGN KEY (ProductoId) REFERENCES Tipo_Comprobante(ProductoId));
+
+
+
+ALTER TABLE Productos
+	ADD (CONSTRAINT  R_5 FOREIGN KEY (PreparacionId) REFERENCES Preparacion(PreparacionId));
+
+
+
+ALTER TABLE Productos
+	ADD (CONSTRAINT  R_7 FOREIGN KEY (CategoriaId) REFERENCES Categoria(CategoriaId));
+
+
+
+ALTER TABLE Tipo_Comprobante
+	ADD (CONSTRAINT  R_1 FOREIGN KEY (BoletaId) REFERENCES Boleta(BoletaId));
+
+
+
+ALTER TABLE Tipo_Comprobante
+	ADD (CONSTRAINT  R_3 FOREIGN KEY (FacturaId,Ruc) REFERENCES Factura(FacturaId,Ruc));
+
+
+
+ALTER TABLE Tipo_Comprobante
+	ADD (CONSTRAINT  R_25 FOREIGN KEY (ProductoId) REFERENCES Productos(ProductoId));
+
+
+
+ALTER TABLE Ubicacion_Pedido
+	ADD (CONSTRAINT  R_19 FOREIGN KEY (ClienteId) REFERENCES Cliente(ClienteId));
+
+
+
+ALTER TABLE Ubicacion_Pedido
+	ADD (CONSTRAINT  R_22 FOREIGN KEY (ProductoId) REFERENCES Tipo_Comprobante(ProductoId));
+
+
